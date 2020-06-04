@@ -1,2 +1,0 @@
-random-word==1.0.4
-googletrans==2.4.0
