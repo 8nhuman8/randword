@@ -2,8 +2,8 @@
 
 
 def get_path_to_pos_file(part_of_speech: str) -> str:
-        from pkg_resources import resource_filename
-        return resource_filename('randword', 'words/') + f'{part_of_speech}.txt'
+    from pkg_resources import resource_filename
+    return resource_filename('randword', 'words/') + f'{part_of_speech}.txt'
 
 
 def get_random_word(include_pos: list or None = None,
