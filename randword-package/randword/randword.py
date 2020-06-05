@@ -1,30 +1,25 @@
-from random import choice
-from os import path
-from distutils.sysconfig import get_python_lib
+''' From now on abbreviation "pos" means "part of speech" '''
 
 
-# From now on abbreviation "pos" means "part of speech"
+def get_path_to_pos_file(part_of_speech: str) -> str:
+        from pkg_resources import resource_filename
+        return resource_filename('randword', 'words/') + f'{part_of_speech}.txt'
 
 
-def get_path_to_pos_file(pos_name: str) -> str:
-    if path.isfile(get_python_lib() + '/plateDetect'):
-        package_path = get_python_lib() + '/plateDetect'
-    else:
-        package_path = path.dirname(__file__)
-
-    return f'{package_path}/words/{pos_name}.txt'
-
-
-def get_random_word(include_pos: list = [],
-                    exclude_pos: list = [],
+def get_random_word(include_pos: list or None = None,
+                    exclude_pos: list or None = None,
                     min_length: int = 1,
-                    max_length: int = 0,
-                    starts_with: str = '',
-                    ends_with: str = '',
-                    pattern: str = '') -> str or -1:
+                    max_length: int or None = None,
+                    starts_with: str or None = None,
+                    ends_with: str or None = None,
+                    pattern: str or None = None) -> str or -1:
     if not include_pos:
         include_pos = ['adj', 'adv', 'conj', 'interj', 'noun', 'prep', 'pron', 'verb']
-    parts_of_speech = list(set(include_pos) - set(exclude_pos))
+
+    if exclude_pos:
+        parts_of_speech = list(set(include_pos) - set(exclude_pos))
+    else:
+        parts_of_speech = include_pos
 
     words = []
     for part_of_speech in parts_of_speech:
@@ -43,10 +38,10 @@ def get_random_word(include_pos: list = [],
         filtered_words = list(filter(lambda word: word.startswith(starts_with), filtered_words))
     if ends_with:
         filtered_words = list(filter(lambda word: word.endswith(ends_with), filtered_words))
-
     if pattern:
         filtered_words = list(filter(lambda word: pattern in word, filtered_words))
 
+    from random import choice
     try:
         return choice(filtered_words)
     except IndexError:

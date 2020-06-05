@@ -2,25 +2,28 @@ from setuptools import setup
 
 
 setup(
-    name='rand-word',
+    name='randword',
     description='A Python package for generation random English words',
-    keywords=['generation', 'word', 'random', 'english', 'python', 'package'],
-    version='0.1.1',
+    keywords=['generation', 'word', 'random', 'english'],
+    version='2.0',
 
     author='Artyom Bezmenov (8nhuman)',
     author_email='artem.bezmenov02@gmail.com',
     license='MIT',
 
-    url='https://github.com/8nhuman8/rand-word',
-    download_url='https://github.com/8nhuman8/rand-word/archive/0.1.1.tar.gz',
+    url='https://github.com/8nhuman8/randword',
+    download_url='https://github.com/8nhuman8/randword/archive/2.0.tar.gz',
 
-    package_data={'': ['*.txt']},
+    packages=['randword'],
+
+    include_package_data=True,
 
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',
-        'Development Status :: 1 - Planning',
+        'Development Status :: 3 - Alpha',
         'Topic :: Software Development :: Libraries :: Python Modules',
-        'Intended Audience :: Developers'
+        'Intended Audience :: Developers',
+        'Operating System :: OS Independent'
     ]
 )

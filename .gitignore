@@ -1,6 +1,9 @@
 # VS Code workspace settings
 .vscode/
 
+# Upload info
+upload.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
