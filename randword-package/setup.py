@@ -4,8 +4,14 @@ from setuptools import setup
 setup(
     name='randword',
     description='A Python package for generation random English words',
-    keywords=['generation', 'word', 'random', 'english'],
-    version='2.0.2',
+    keywords=[
+        'python', 'package', 'python-package', 'random',
+        'word', 'words', 'generator', 'generation',
+        'random-word', 'random-words', 'random-word-generator',
+        'random-word-generation', 'english',
+        'english-word', 'english-words'
+    ],
+    version='2.1',
 
     author='Artyom Bezmenov (8nhuman)',
     author_email='artem.bezmenov02@gmail.com',
@@ -14,15 +20,12 @@ setup(
     packages=['randword'],
     include_package_data=True,
 
-    project_urls= {
-        'Homepage': 'https://github.com/8nhuman8/randword',
-        'Download': 'https://github.com/8nhuman8/randword/archive/2.0.2.tar.gz',
+    project_urls={ 
+        'Bug Tracker': 'https://github.com/8nhuman8/randword/issues',
         'Source Code': 'https://github.com/8nhuman8/randword',
-        'Bug Tracker': 'https://github.com/8nhuman8/randword/issues'
+        'Download': 'https://github.com/8nhuman8/randword/archive/2.1.tar.gz',
+        'Homepage': 'https://github.com/8nhuman8/randword'
     },
-
-    #url='https://github.com/8nhuman8/randword',
-    #download_url='https://github.com/8nhuman8/randword/archive/2.0.1.tar.gz',
 
     classifiers=[
         'Programming Language :: Python :: 3',
