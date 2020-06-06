@@ -5,14 +5,14 @@ setup(
     name='randword',
     description='A Python package for generation random English words',
     keywords=['generation', 'word', 'random', 'english'],
-    version='2.0',
+    version='2.0.1',
 
     author='Artyom Bezmenov (8nhuman)',
     author_email='artem.bezmenov02@gmail.com',
     license='MIT',
 
     url='https://github.com/8nhuman8/randword',
-    download_url='https://github.com/8nhuman8/randword/archive/2.0.tar.gz',
+    download_url='https://github.com/8nhuman8/randword/archive/2.0.1.tar.gz',
 
     packages=['randword'],
 

@@ -19,6 +19,7 @@ def get_path_to_pos_file(part_of_speech: str) -> str:
 
 def get_random_word(include_pos: list or None = None,
                     exclude_pos: list or None = None,
+                    word_len: int or None = None,
                     min_word_len: int = 1,
                     max_word_len: int or None = None,
                     starts_with: str or None = None,
@@ -31,6 +32,8 @@ def get_random_word(include_pos: list or None = None,
             included in the generation. Deafults to None.
         exclude_pos (list of str or None): List of parts of speech that will be
             excluded in the generation. Deafults to None.
+        word_len (int or None): Specifies the length of a word. Ignores the
+            `min_word_len` and `max_word_len` parameters. Default to None.
         min_word_len (int): The minimum word length. Defaults to 1.
         max_word_len (int or None): The maximum word length. Defaults to None.
         starts_with (str or None): The pattern with which
@@ -45,6 +48,48 @@ def get_random_word(include_pos: list or None = None,
 
     Raises:
         IndexError: If the word was not found.
+
+    Examples:
+        >>> import randword
+
+        >>> randword.get_random_word()
+        'concession'
+
+        >>> randword.get_random_word(include_pos=['adj'])
+        'accentual'
+
+        >>> randword.get_random_word(include_pos=['adj', 'verb'])
+        'immaterialize'
+
+        >>> randword.get_random_word(exclude_pos=['adj', 'adv', 'noun', 'pron', 'verb'])
+        'even if'
+
+        >>> randword.get_random_word(min_word_len=20)
+        'magnetic line of force'
+
+        >>> randword.get_random_word(max_word_len=3)
+        'use'
+
+        >>> randword.get_random_word(min_word_len=4, max_word_len=5)
+        'Sepia'
+
+        >>> randword.get_random_word(word_len=5)
+        'buggy'
+
+        >>> randword.get_random_word(starts_with="ly")
+        'lymphopoiesis'
+
+        >>> randword.get_random_word(ends_with="en")
+        'ten'
+
+        >>> randword.get_random_word(starts_with="un", ends_with="e")
+        'untouchable'
+
+        >>> randword.get_random_word(pattern="ten")
+        'finiteness'
+
+        >>> randword.get_random_word(starts_with="e", ends_with="n", pattern="non")
+        'enigma canon'
     '''
     if not include_pos:
         include_pos = ['adj', 'adv', 'conj', 'interj', 'noun', 'prep', 'pron', 'verb']
@@ -66,6 +111,9 @@ def get_random_word(include_pos: list or None = None,
         filtered_words = list(filter(lambda word: min_word_len <= len(word) <= max_word_len, words))
     else:
         filtered_words = list(filter(lambda word: min_word_len <= len(word), words))
+
+    if word_len:
+        filtered_words = list(filter(lambda word: word_len == len(word), words))
 
     if starts_with:
         filtered_words = list(filter(lambda word: word.startswith(starts_with), filtered_words))
@@ -83,6 +131,7 @@ def get_random_word(include_pos: list or None = None,
 def get_random_words(words_count: int,
                      include_pos: list or None = None,
                      exclude_pos: list or None = None,
+                     word_len: int or None = None,
                      min_word_len: int = 1,
                      max_word_len: int or None = None,
                      starts_with: str or None = None,
@@ -96,6 +145,8 @@ def get_random_words(words_count: int,
             included in the generation. Deafults to None.
         exclude_pos (list of str or None): List of parts of speech that will be
             excluded in the generation. Deafults to None.
+        word_len (int or None): Specifies the length of a word. Ignores the
+            `min_word_len` and `max_word_len` parameters. Default to None.
         min_word_len (int): The minimum word length. Defaults to 1.
         max_word_len (int or None): The maximum word length. Defaults to None.
         starts_with (str or None): The pattern with which
@@ -110,6 +161,48 @@ def get_random_words(words_count: int,
 
     Raises:
         IndexError: If the desired number of words was not found.
+
+    Examples:
+        >>> import randword
+
+        >>> randword.get_random_words(3)
+        ['Mozambican', 'demythologization', 'incontestable']
+
+        >>> randword.get_random_words(3, include_pos=['adj'])
+        ['discriminable', 'excrescent', 'noncivilized']
+
+        >>> randword.get_random_words(3, include_pos=['adj', 'verb'])
+        ['Ptolemaic', 'masonic', 'tangled']
+
+        >>> randword.get_random_words(4, exclude_pos=['adj', 'adv', 'noun', 'pron', 'verb'])
+        ['beneath', 'now that', 'upon', 'yup']
+
+        >>> randword.get_random_words(2, min_word_len=20)
+        ['plasma thromboplastin antecedent', 'United States House of Representatives']
+
+        >>> randword.get_random_words(5, max_word_len=3)
+        ['say', 'Ofo', 'rag', 'act', 'N']
+
+        >>> randword.get_random_words(3, min_word_len=4, max_word_len=5)
+        ['alga', 'butch', 'nark']
+
+        >>> randword.get_random_words(2, word_len=7)
+        ['kinesis', 'outcrop']
+
+        >>> randword.get_random_words(3, starts_with="ly")
+        ['lysogeny', 'lymphoblastic leukemia', 'lyceum']
+
+        >>> randword.get_random_words(3, ends_with="en")
+        ['genus Pecten', 'Dinesen', 'Eigen']
+
+        >>> randword.get_random_words(3, starts_with="un", ends_with="e")
+        ['unchaste', 'undersize', 'unprotective']
+
+        >>> randword.get_random_words(3, pattern="ten")
+        ['lichtenoid eczema', 'potential unit', 'minuteness']
+
+        >>> randword.get_random_words(2, starts_with="e", ends_with="n", pattern="non")
+        ['enigma canon', 'epiphenomenon']
     '''
     if not include_pos:
         include_pos = ['adj', 'adv', 'conj', 'interj', 'noun', 'prep', 'pron', 'verb']
@@ -132,6 +225,9 @@ def get_random_words(words_count: int,
     else:
         filtered_words = list(filter(lambda word: min_word_len <= len(word), words))
 
+    if word_len:
+        filtered_words = list(filter(lambda word: word_len == len(word), words))
+
     if starts_with:
         filtered_words = list(filter(lambda word: word.startswith(starts_with), filtered_words))
     if ends_with:
@@ -139,10 +235,17 @@ def get_random_words(words_count: int,
     if pattern:
         filtered_words = list(filter(lambda word: pattern in word, filtered_words))
 
-    if len(filtered_words) != words_count:
-        raise IndexError('The desired number of words was not found')
+    INDEX_ERROR_DESCRIPTION = 'The desired number of words was not found'
 
-    return sample(filtered_words, words_count)
+    if not filtered_words:
+        raise IndexError(INDEX_ERROR_DESCRIPTION)
+
+    try:
+        final_words = sample(filtered_words, words_count)
+    except ValueError:
+        raise IndexError(INDEX_ERROR_DESCRIPTION)
+
+    return final_words
 
 
 if __name__ == "__main__":
