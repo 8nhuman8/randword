@@ -3,6 +3,9 @@ from pkg_resources import resource_filename
 from random import choice, sample
 
 
+PARTS_OF_SPEECH = ['adj', 'adv', 'conj', 'interj', 'noun', 'prep', 'pron', 'verb']
+
+
 def _get_path_to_pos_file(part_of_speech: str) -> str:
     '''Returns the path to a file with words of a specific part of speech.
 
@@ -137,7 +140,7 @@ def get_random_word(count: Optional[int] = None,
         ['enigma canon', 'epiphenomenon']
     '''
     if not include_pos:
-        include_pos = ['adj', 'adv', 'conj', 'interj', 'noun', 'prep', 'pron', 'verb']
+        include_pos = PARTS_OF_SPEECH
 
     if exclude_pos:
         parts_of_speech = list(set(include_pos) - set(exclude_pos))
@@ -186,5 +189,5 @@ def get_random_word(count: Optional[int] = None,
         return choice(filtered_words)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     print(get_random_word())
