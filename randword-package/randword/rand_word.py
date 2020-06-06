@@ -1,21 +1,10 @@
-from typing import Optional, List
-from pkg_resources import resource_filename
 from random import choice, sample
+from typing import Optional, List
+
+from .utilities import get_words_from_data_file
 
 
 PARTS_OF_SPEECH = ['adj', 'adv', 'conj', 'interj', 'noun', 'prep', 'pron', 'verb']
-
-
-def _get_path_to_pos_file(part_of_speech: str) -> str:
-    '''Returns the path to a file with words of a specific part of speech.
-
-    Args:
-        part_of_speech (str): The abbreviated name of the part of speech.
-
-    Returns:
-        str: The absolute path to the file.
-    '''
-    return resource_filename('randword', 'words/') + f'{part_of_speech}.txt'
 
 
 ''' Abbreviation "pos" means "part of speech" '''
@@ -149,11 +138,8 @@ def get_random_word(count: Optional[int] = None,
 
     words = []
     for part_of_speech in parts_of_speech:
-        pos_file_path = _get_path_to_pos_file(part_of_speech)
-        with open(pos_file_path, 'r') as pos_file:
-            pos_words = pos_file.readlines()
-            words.extend(pos_words)
-    words = [word.rstrip() for word in words]
+        pos_words = get_words_from_data_file('parts_of_speech/', part_of_speech)
+        words.extend(pos_words)
 
     if max_word_len:
         filtered_words = list(filter(lambda word: min_word_len <= len(word) <= max_word_len, words))

@@ -1,1 +1,2 @@
-include randword/words/*.txt
+include LICENSE.txt
+recursive-include randword/data *.txt

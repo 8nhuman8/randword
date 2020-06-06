@@ -11,7 +11,7 @@ setup(
         'random-word-generation', 'english',
         'english-word', 'english-words'
     ],
-    version='2.2',
+    version='2.3',
 
     author='Artyom Bezmenov (8nhuman)',
     author_email='artem.bezmenov02@gmail.com',
@@ -23,7 +23,7 @@ setup(
     project_urls={ 
         'Bug Tracker': 'https://github.com/8nhuman8/randword/issues',
         'Source Code': 'https://github.com/8nhuman8/randword',
-        'Download': 'https://github.com/8nhuman8/randword/archive/2.2.tar.gz',
+        'Download': 'https://github.com/8nhuman8/randword/archive/2.3.tar.gz',
         'Homepage': 'https://github.com/8nhuman8/randword'
     },
 

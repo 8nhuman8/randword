@@ -3,7 +3,7 @@ from string import ascii_letters, ascii_lowercase, \
 from random import choice
 
 
-def generate_random_sequence(length: int = 8) -> str:
+def get_random_sequence(length: int = 8) -> str:
     chars = ascii_letters + digits
     return ''.join(choice(chars) for _ in range(length))
 
@@ -17,6 +17,6 @@ def get_random_digit() -> str:
 
 
 if __name__ == '__main__':
-    print(generate_random_sequence())
+    print(get_random_sequence())
     print(get_random_letter())
     print(get_random_digit())
