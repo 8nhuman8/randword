@@ -4,6 +4,9 @@
 # CMD commands
 cmd-commands/
 
+# To-do list
+TODO.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
