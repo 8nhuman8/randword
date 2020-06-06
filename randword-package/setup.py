@@ -11,7 +11,7 @@ setup(
         'random-word-generation', 'english',
         'english-word', 'english-words'
     ],
-    version='2.3.1',
+    version='2.4',
 
     author='Artyom Bezmenov (8nhuman)',
     author_email='artem.bezmenov02@gmail.com',
@@ -23,14 +23,14 @@ setup(
     project_urls={ 
         'Bug Tracker': 'https://github.com/8nhuman8/randword/issues',
         'Source Code': 'https://github.com/8nhuman8/randword',
-        'Download': 'https://github.com/8nhuman8/randword/archive/2.3.1.tar.gz',
+        'Download': 'https://github.com/8nhuman8/randword/archive/2.4.tar.gz',
         'Homepage': 'https://github.com/8nhuman8/randword'
     },
 
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Intended Audience :: Developers',
         'Operating System :: OS Independent'

@@ -7,7 +7,6 @@ from .utilities import get_words_from_data_file
 PARTS_OF_SPEECH = ['adj', 'adv', 'conj', 'interj', 'noun', 'prep', 'pron', 'verb']
 
 
-''' Abbreviation "pos" means "part of speech" '''
 def get_random_word(count: Optional[int] = None,
                     include_pos: Optional[List[str]] = None,
                     exclude_pos: Optional[List[str]] = None,
@@ -40,92 +39,92 @@ def get_random_word(count: Optional[int] = None,
             contained in the word. Defaults to None.
 
     Returns:
-        str: A random English word (if `words_count` is None).
-        list: A list of random English words (if `words_count` is not None).
+        str: A random English word (if `count` is None).
+        list: A list of random English words (if `count` is not None).
 
     Raises:
         IndexError: If the word was not found or if the
             desired number of words was not found.
 
     Examples:
-        >>> import randword
+        >>> import randword as rw
 
-        >>> randword.get_random_word()
+        >>> rw.get_random_word()
         'concession'
 
-        >>> randword.get_random_word(include_pos=['adj'])
+        >>> rw.get_random_word(include_pos=['adj'])
         'accentual'
 
-        >>> randword.get_random_word(include_pos=['adj', 'verb'])
+        >>> rw.get_random_word(include_pos=['adj', 'verb'])
         'immaterialize'
 
-        >>> randword.get_random_word(exclude_pos=['adj', 'adv', 'noun', 'pron', 'verb'])
+        >>> rw.get_random_word(exclude_pos=['adj', 'adv', 'noun', 'pron', 'verb'])
         'even if'
 
-        >>> randword.get_random_word(min_word_len=20)
+        >>> rw.get_random_word(min_word_len=20)
         'magnetic line of force'
 
-        >>> randword.get_random_word(max_word_len=3)
+        >>> rw.get_random_word(max_word_len=3)
         'use'
 
-        >>> randword.get_random_word(min_word_len=4, max_word_len=5)
+        >>> rw.get_random_word(min_word_len=4, max_word_len=5)
         'Sepia'
 
-        >>> randword.get_random_word(word_len=5)
+        >>> rw.get_random_word(word_len=5)
         'buggy'
 
-        >>> randword.get_random_word(starts_with="ly")
+        >>> rw.get_random_word(starts_with="ly")
         'lymphopoiesis'
 
-        >>> randword.get_random_word(ends_with="en")
+        >>> rw.get_random_word(ends_with="en")
         'ten'
 
-        >>> randword.get_random_word(starts_with="un", ends_with="e")
+        >>> rw.get_random_word(starts_with="un", ends_with="e")
         'untouchable'
 
-        >>> randword.get_random_word(pattern="ten")
+        >>> rw.get_random_word(pattern="ten")
         'finiteness'
 
-        >>> randword.get_random_word(starts_with="e", ends_with="n", pattern="non")
+        >>> rw.get_random_word(starts_with="e", ends_with="n", pattern="non")
         'enigma canon'
 
-        >>> randword.get_random_word(count=3)
+        >>> rw.get_random_word(count=3)
         ['Mozambican', 'demythologization', 'incontestable']
 
-        >>> randword.get_random_word(count=3, include_pos=['adj'])
+        >>> rw.get_random_word(3, include_pos=['adj'])
         ['discriminable', 'excrescent', 'noncivilized']
 
-        >>> randword.get_random_word(count=3, include_pos=['adj', 'verb'])
+        >>> rw.get_random_word(3, ['adj', 'verb'])
         ['Ptolemaic', 'masonic', 'tangled']
 
-        >>> randword.get_random_word(count=4, exclude_pos=['adj', 'adv', 'noun', 'pron', 'verb'])
+        >>> rw.get_random_word(4, exclude_pos=['adj', 'adv', 'noun', 'pron', 'verb'])
         ['beneath', 'now that', 'upon', 'yup']
 
-        >>> randword.get_random_word(count=2, min_word_len=20)
+        >>> rw.get_random_word(2, min_word_len=20)
         ['plasma thromboplastin antecedent', 'United States House of Representatives']
 
-        >>> randword.get_random_word(count=5, max_word_len=3)
+        >>> rw.get_random_word(count=5, max_word_len=3)
         ['say', 'Ofo', 'rag', 'act', 'N']
 
-        >>> randword.get_random_word(count=3, min_word_len=4, max_word_len=5)
+        >>> rw.get_random_word(3, min_word_len=4, max_word_len=5)
         ['alga', 'butch', 'nark']
 
-        >>> randword.get_random_word(count=2, word_len=7)
+        >>> rw.get_random_word(2, word_len=7)
         ['kinesis', 'outcrop']
 
-        >>> randword.get_random_word(count=3, starts_with="ly")
+        >>> rw.get_random_word(3, starts_with="ly")
         ['lysogeny', 'lymphoblastic leukemia', 'lyceum']
 
-        >>> randword.get_random_word(count=3, ends_with="en")
+        >>> rw.get_random_word(3, ends_with="en")
         ['genus Pecten', 'Dinesen', 'Eigen']
 
-        >>> randword.get_random_word(count=3, starts_with="un", ends_with="e")
+        >>> rw.get_random_word(3, starts_with="un", ends_with="e")
         ['unchaste', 'undersize', 'unprotective']
 
-        >>> randword.get_random_word(count=3, pattern="ten")
+        >>> rw.get_random_word(3, pattern="ten")
         ['lichtenoid eczema', 'potential unit', 'minuteness']
 
-        >>> randword.get_random_word(count=2, starts_with="e", ends_with="n", pattern="non")
+        >>> rw.get_random_word(count=2, starts_with="e", ends_with="n", pattern="non")
         ['enigma canon', 'epiphenomenon']
     '''
     if not include_pos:
