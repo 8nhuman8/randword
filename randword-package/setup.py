@@ -1,9 +1,13 @@
 from setuptools import setup
 
+with open('README.md', 'r') as readme_file:
+    long_description = readme_file.read()
 
 setup(
     name='randword',
     description='A Python package for generation random English words',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     keywords=[
         'python', 'package', 'python-package', 'random',
         'word', 'words', 'generator', 'generation',
@@ -11,7 +15,7 @@ setup(
         'random-word-generation', 'english',
         'english-word', 'english-words'
     ],
-    version='2.4',
+    version='2.4.1',
 
     author='Artyom Bezmenov (8nhuman)',
     author_email='artem.bezmenov02@gmail.com',
@@ -23,7 +27,7 @@ setup(
     project_urls={ 
         'Bug Tracker': 'https://github.com/8nhuman8/randword/issues',
         'Source Code': 'https://github.com/8nhuman8/randword',
-        'Download': 'https://github.com/8nhuman8/randword/archive/2.4.tar.gz',
+        'Download': 'https://github.com/8nhuman8/randword/archive/2.4.1.tar.gz',
         'Homepage': 'https://github.com/8nhuman8/randword'
     },
 
