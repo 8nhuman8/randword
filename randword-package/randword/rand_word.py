@@ -1,5 +1,5 @@
 from random import choice, sample
-from typing import Optional, List
+from typing import Optional, List, Union
 
 from .utilities import get_words_from_data_file
 
@@ -7,15 +7,15 @@ from .utilities import get_words_from_data_file
 PARTS_OF_SPEECH = ['adj', 'adv', 'conj', 'interj', 'noun', 'prep', 'pron', 'verb']
 
 
-def get_random_word(count: Optional[int] = None,
-                    include_pos: Optional[List[str]] = None,
-                    exclude_pos: Optional[List[str]] = None,
-                    word_len: Optional[int] = None,
-                    min_word_len: int = 1,
-                    max_word_len: Optional[int] = None,
-                    starts_with: Optional[str] = None,
-                    ends_with: Optional[str] = None,
-                    pattern: Optional[str] = None) -> str or list:
+def word(count: Optional[int] = None,
+         include_pos: Optional[List[str]] = None,
+         exclude_pos: Optional[List[str]] = None,
+         word_len: Optional[int] = None,
+         min_word_len: int = 1,
+         max_word_len: Optional[int] = None,
+         starts_with: Optional[str] = None,
+         ends_with: Optional[str] = None,
+         pattern: Optional[str] = None) -> Union[str, List[str]]:
     '''
     Returns a random English word or a list of words.
     Abbreviation "pos" means "part of speech".
@@ -40,7 +40,7 @@ def get_random_word(count: Optional[int] = None,
 
     Returns:
         str: A random English word (if `count` is None).
-        list: A list of random English words (if `count` is not None).
+        list of str: A list of random English words (if `count` is not None).
 
     Raises:
         IndexError: If the word was not found or if the
@@ -137,7 +137,7 @@ def get_random_word(count: Optional[int] = None,
 
     words = []
     for part_of_speech in parts_of_speech:
-        pos_words = get_words_from_data_file('parts_of_speech/', part_of_speech)
+        pos_words = get_words_from_data_file('parts_of_speech', part_of_speech)
         words.extend(pos_words)
 
     if max_word_len:
@@ -175,4 +175,4 @@ def get_random_word(count: Optional[int] = None,
 
 
 if __name__ == '__main__':
-    print(get_random_word())
+    print(word())

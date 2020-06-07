@@ -2,7 +2,7 @@ from string import ascii_letters, digits
 from random import choice
 
 
-def get_random_sequence(length: int = 8) -> str:
+def sequence(length: int = 8) -> str:
     '''
     Returns a random sequence consisting of ASCII symbols and digits.
 
@@ -15,14 +15,14 @@ def get_random_sequence(length: int = 8) -> str:
     Example:
         >>> import randword as rw
 
-        >>> rw.get_random_sequence():
+        >>> rw.sequence():
         '8OOBn9XN'
     '''
     chars = ascii_letters + digits
     return ''.join(choice(chars) for _ in range(length))
 
 
-def get_random_letter() -> str:
+def letter() -> str:
     '''
     Returns a random ASCII letter.
 
@@ -32,13 +32,13 @@ def get_random_letter() -> str:
     Example:
         >>> import randword as rw
 
-        >>> rw.get_random_letter():
+        >>> rw.letter():
         'Q'
     '''
     return choice(ascii_letters)
 
 
-def get_random_digit() -> str:
+def digit() -> str:
     '''
     Returns a random digit.
 
@@ -48,13 +48,13 @@ def get_random_digit() -> str:
     Example:
         >>> import randword as rw
 
-        >>> rw.get_random_digit():
+        >>> rw.digit():
         '8'
     '''
     return choice(digits)
 
 
 if __name__ == '__main__':
-    print(get_random_sequence())
-    print(get_random_letter())
-    print(get_random_digit())
+    print(sequence())
+    print(letter())
+    print(digit())

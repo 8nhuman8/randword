@@ -1,11 +1,11 @@
 from random import choice, sample
-from typing import Optional
+from typing import Optional, List, Union
 
 from .utilities import get_words_from_data_file
 
 
-def get_random_name(count: Optional[int] = None,
-                    gender: Optional[str] = None) -> str or list:
+def name(count: Optional[int] = None,
+         gender: Optional[str] = None) -> Union[str, List[str]]:
     '''
     Returns a random first name.
 
@@ -17,33 +17,33 @@ def get_random_name(count: Optional[int] = None,
 
     Returns:
         str: A random first name (if `count` is None).
-        list: A list of random first names (if `count` is not None).
+        list of str: A list of random first names (if `count` is not None).
 
     Examples:
         >>> import randword as rw
 
-        >>> rw.get_random_name()
+        >>> rw.name()
         'Ethelred'
 
-        >>> rw.get_random_name(gender='m')
+        >>> rw.name(gender='m')
         'Elden'
 
-        >>> rw.get_random_name(gender='f')
+        >>> rw.name(gender='f')
         'Julee'
 
-        >>> rw.get_random_name(count=4)
+        >>> rw.name(count=4)
         ['Claudie', 'Trisha', 'Griffith', 'Annamarie']
 
-        >>> rw.get_random_name(4, 'm')
+        >>> rw.name(4, 'm')
         ['Helmuth', 'Collins', 'Ulrich', 'Zebedee']
     '''
     if gender == 'm':
-        names = get_words_from_data_file('names/', 'male_names')
+        names = get_words_from_data_file('names', 'male_names')
     elif gender == 'f':
-        names = get_words_from_data_file('names/', 'female_names')
+        names = get_words_from_data_file('names', 'female_names')
     else:
-        male_names = get_words_from_data_file('names/', 'male_names')
-        female_names = get_words_from_data_file('names/', 'female_names')
+        male_names = get_words_from_data_file('names', 'male_names')
+        female_names = get_words_from_data_file('names', 'female_names')
         names = male_names + female_names
 
     if count:
@@ -52,7 +52,7 @@ def get_random_name(count: Optional[int] = None,
         return choice(names)
 
 
-def get_random_surname(count: Optional[int] = None):
+def surname(count: Optional[int] = None) -> Union[str, List[str]]:
     '''
     Returns a random surname (or last name).
 
@@ -62,18 +62,19 @@ def get_random_surname(count: Optional[int] = None):
 
     Returns:
         str: A random surname (if `count` is None).
-        list: A list of surnames (if `count` is not None).
+        list of str: A list of surnames
+            (if `count` is not None).
 
     Examples:
         >>> import randword as rw
 
-        >>> rw.get_random_surname()
+        >>> rw.surname()
         'Quicksall'
 
-        >>> rw.get_random_surname(4)
+        >>> rw.surname(4)
         ['Shahan', 'Eickhoff', 'Akamiro', 'Giovanelli']
     '''
-    surnames = get_words_from_data_file('names/', 'surnames')
+    surnames = get_words_from_data_file('names', 'surnames')
 
     if count:
         return sample(surnames, count)
@@ -81,8 +82,8 @@ def get_random_surname(count: Optional[int] = None):
         return choice(surnames)
 
 
-def get_random_fullname(count: Optional[int] = None,
-                        gender: Optional[str] = None):
+def fullname(count: Optional[int] = None,
+             gender: Optional[str] = None) -> Union[str, List[str]]:
     '''
     Returns a random fullname.
 
@@ -94,36 +95,37 @@ def get_random_fullname(count: Optional[int] = None,
 
     Returns:
         str: A random fullname (if `count` is None).
-        list: A list of random fullnames (if `count` is not None).
+        list of str: A list of random fullnames
+            (if `count` is not None).
 
     Examples:
         >>> import randword as rw
 
-        >>> rw.get_random_fullname()
+        >>> rw.fullname()
         'Charmane Bitzel'
 
-        >>> rw.get_random_fullname(gender='m')
+        >>> rw.fullname(gender='m')
         'Nevin Mcnaught'
 
-        >>> rw.get_random_fullname(gender='f')
+        >>> rw.fullname(gender='f')
         'Sophia Comans'
 
-        >>> rw.get_random_fullname(count=2)
+        >>> rw.fullname(count=2)
         ['Annetta Tiso', 'Babette Velazquez']
 
-        >>> rw.get_random_fullname(2, 'm')
+        >>> rw.fullname(2, 'm')
         ['Thaxter Vanhofwegen', 'Timmie Coray']
     '''
     if gender == 'm':
-        names = get_words_from_data_file('names/', 'male_names')
+        names = get_words_from_data_file('names', 'male_names')
     elif gender == 'f':
-        names = get_words_from_data_file('names/', 'female_names')
+        names = get_words_from_data_file('names', 'female_names')
     else:
-        male_names = get_words_from_data_file('names/', 'male_names')
-        female_names = get_words_from_data_file('names/', 'female_names')
+        male_names = get_words_from_data_file('names', 'male_names')
+        female_names = get_words_from_data_file('names', 'female_names')
         names = male_names + female_names
 
-    surnames = get_words_from_data_file('names/', 'surnames')
+    surnames = get_words_from_data_file('names', 'surnames')
 
     if count:
         fullnames = []
@@ -139,6 +141,6 @@ def get_random_fullname(count: Optional[int] = None,
 
 
 if __name__ == '__main__':
-    print(get_random_name())
-    print(get_random_surname())
-    print(get_random_fullname())
+    print(name())
+    print(surname())
+    print(fullname())
