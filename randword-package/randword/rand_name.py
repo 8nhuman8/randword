@@ -1,7 +1,7 @@
 from random import choice, sample
 from typing import Optional, List, Union
 
-from .utilities import get_words_from_data_file
+from .utilities import get_data
 
 
 def name(count: Optional[int] = None,
@@ -38,12 +38,12 @@ def name(count: Optional[int] = None,
         ['Helmuth', 'Collins', 'Ulrich', 'Zebedee']
     '''
     if gender == 'm':
-        names = get_words_from_data_file('names', 'male_names')
+        names = get_data('names', 'male_names')
     elif gender == 'f':
-        names = get_words_from_data_file('names', 'female_names')
+        names = get_data('names', 'female_names')
     else:
-        male_names = get_words_from_data_file('names', 'male_names')
-        female_names = get_words_from_data_file('names', 'female_names')
+        male_names = get_data('names', 'male_names')
+        female_names = get_data('names', 'female_names')
         names = male_names + female_names
 
     if count:
@@ -74,7 +74,7 @@ def surname(count: Optional[int] = None) -> Union[str, List[str]]:
         >>> rw.surname(4)
         ['Shahan', 'Eickhoff', 'Akamiro', 'Giovanelli']
     '''
-    surnames = get_words_from_data_file('names', 'surnames')
+    surnames = get_data('names', 'surnames')
 
     if count:
         return sample(surnames, count)
@@ -117,15 +117,15 @@ def fullname(count: Optional[int] = None,
         ['Thaxter Vanhofwegen', 'Timmie Coray']
     '''
     if gender == 'm':
-        names = get_words_from_data_file('names', 'male_names')
+        names = get_data('names', 'male_names')
     elif gender == 'f':
-        names = get_words_from_data_file('names', 'female_names')
+        names = get_data('names', 'female_names')
     else:
-        male_names = get_words_from_data_file('names', 'male_names')
-        female_names = get_words_from_data_file('names', 'female_names')
+        male_names = get_data('names', 'male_names')
+        female_names = get_data('names', 'female_names')
         names = male_names + female_names
 
-    surnames = get_words_from_data_file('names', 'surnames')
+    surnames = get_data('names', 'surnames')
 
     if count:
         fullnames = []

@@ -1,7 +1,7 @@
 from random import choice, sample
 from typing import Optional, List, Union
 
-from .utilities import get_words_from_data_file
+from .utilities import get_data
 
 
 PARTS_OF_SPEECH = ['adj', 'adv', 'conj', 'interj', 'noun', 'prep', 'pron', 'verb']
@@ -137,7 +137,7 @@ def word(count: Optional[int] = None,
 
     words = []
     for part_of_speech in parts_of_speech:
-        pos_words = get_words_from_data_file('parts_of_speech', part_of_speech)
+        pos_words = get_data('parts_of_speech', part_of_speech)
         words.extend(pos_words)
 
     if max_word_len:

@@ -1,7 +1,7 @@
 from random import choice, sample
 from typing import Optional, List, Union
 
-from .utilities import get_words_from_data_file
+from .utilities import get_data
 
 
 def country(count: Optional[int] = None) -> Union[str, List[str]]:
@@ -26,7 +26,7 @@ def country(count: Optional[int] = None) -> Union[str, List[str]]:
         >>> rw.country(4)
         ['Lithuania', 'Ethiopia', 'Romania', 'Cyprus']
     '''
-    countries = get_words_from_data_file('places', 'countries')
+    countries = get_data('places', 'countries')
 
     if count:
         return sample(countries, count)
@@ -56,7 +56,7 @@ def city(count: Optional[int] = None) -> Union[str, List[str]]:
         >>> rw.city(4)
         ['Scottsdale', 'Jefferson', 'Vero Beach', 'Gainesville']
     '''
-    cities = get_words_from_data_file('places', 'cities')
+    cities = get_data('places', 'cities')
 
     if count:
         return sample(cities, count)
@@ -66,4 +66,4 @@ def city(count: Optional[int] = None) -> Union[str, List[str]]:
 
 if __name__ == '__main__':
     print(country())
-    print(city(4))
+    print(city())

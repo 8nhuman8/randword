@@ -26,6 +26,7 @@ See the [documentation](https://randword.readthedocs.io/en/latest/usage.html).
 - Male and females names were taken from the [website of Carnegie Mellon University](https://www.cs.cmu.edu/afs/cs/project/ai-repository/ai/areas/nlp/corpora/names/).
 - Countries database was taken from [this GitHub gist](https://gist.github.com/kalinchernev/486393efcca01623b18d).
 - Cities database was taken from [this GitHub gist](https://gist.github.com/norcal82/4accc0d968444859b408).
+- Magic 8-Ball answers were taken from [Wikipedia page](https://en.wikipedia.org/wiki/Magic_8-Ball).
 
 ## License
 [randword](https://github.com/8nhuman8/randword) specific code is distributed under [MIT License](https://github.com/8nhuman8/randword/blob/master/LICENSE).
