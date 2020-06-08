@@ -4,6 +4,9 @@
 # CMD commands
 cmd-commands/
 
+# "Python package" GitHub workflow
+.github/workflows/python-package.yml
+
 # To-do list
 TODO.txt
 
