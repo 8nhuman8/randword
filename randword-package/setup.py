@@ -3,7 +3,7 @@ from setuptools import setup
 
 with open('README.md', 'r') as readme_file:
     long_description = readme_file.read()
-VERSION = '2.5.1'
+VERSION = '2.5.2'
 
 
 setup(
