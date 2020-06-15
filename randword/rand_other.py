@@ -1,4 +1,4 @@
-from random import choice, randrange, getrandbits
+from random import choice, randrange, getrandbits, random
 from time import sleep
 
 from .utilities import get_data
@@ -23,8 +23,11 @@ def magic_8ball() -> None:
             break
 
 
-def flip_coin() -> bool:
-    return bool(getrandbits(1))
+def flip_coin() -> int:
+    if random() < 0.01:
+        return -1
+    else:
+        return int(getrandbits(1))
 
 
 if __name__ == '__main__':

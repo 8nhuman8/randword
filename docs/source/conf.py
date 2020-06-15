@@ -22,7 +22,7 @@ copyright = '2020, Artyom Bezmenov'
 author = 'Artyom Bezmenov'
 
 # The full version, including alpha/beta/rc tags
-release = '2.7'
+release = '2.7.1'
 
 
 # -- General configuration ---------------------------------------------------
