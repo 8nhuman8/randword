@@ -12,7 +12,7 @@
 
 from sys import path
 from os.path import abspath
-path.insert(0, abspath('../../randword'))
+path.insert(0, abspath('../../randword/'))
 
 
 # -- Project information -----------------------------------------------------
@@ -33,9 +33,7 @@ release = '2.6.5'
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',
-    'sphinx.ext.doctest',
-    'sphinx.ext.viewcode',
-    'sphinx.ext.coverage',
+    'sphinx.ext.viewcode'
 ]
 
 # The master toctree document.
