@@ -7,7 +7,7 @@ from .utilities import get_data
 def name(count: Optional[int] = None,
          gender: Optional[str] = None) -> Union[str, List[str]]:
     '''
-    Returns a random first name.
+    Returns a random first name or a list of them.
 
     Args:
         count (int, optional): The number of names to be
@@ -54,7 +54,7 @@ def name(count: Optional[int] = None,
 
 def surname(count: Optional[int] = None) -> Union[str, List[str]]:
     '''
-    Returns a random surname (or last name).
+    Returns a random surname (or last name) or a list of them.
 
     Args:
         count (int, optional): The number of surnames to be
@@ -85,7 +85,7 @@ def surname(count: Optional[int] = None) -> Union[str, List[str]]:
 def fullname(count: Optional[int] = None,
              gender: Optional[str] = None) -> Union[str, List[str]]:
     '''
-    Returns a random fullname.
+    Returns a random fullname or a list of them.
 
     Args:
         count (int, optional): The number of fullnames to be

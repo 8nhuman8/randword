@@ -6,7 +6,7 @@ from .utilities import get_data
 
 def country(count: Optional[int] = None) -> Union[str, List[str]]:
     '''
-    Returns a random country.
+    Returns a random country or a list of a random countries.
 
     Args:
         count (int, optional): The number of countries to be
@@ -36,7 +36,7 @@ def country(count: Optional[int] = None) -> Union[str, List[str]]:
 
 def city(count: Optional[int] = None) -> Union[str, List[str]]:
     '''
-    Returns a random city.
+    Returns a random city or a list of them.
 
     Args:
         count (int, optional): The number of cities to be
