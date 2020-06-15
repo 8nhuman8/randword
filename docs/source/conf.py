@@ -12,7 +12,7 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../../ranword-package/randword'))
+sys.path.insert(0, os.path.abspath('./../..'))
 
 
 # -- Project information -----------------------------------------------------
@@ -22,7 +22,7 @@ copyright = '2020, Artyom Bezmenov'
 author = 'Artyom Bezmenov'
 
 # The full version, including alpha/beta/rc tags
-release = '2.6.1'
+release = '2.6.3'
 
 
 # -- General configuration ---------------------------------------------------

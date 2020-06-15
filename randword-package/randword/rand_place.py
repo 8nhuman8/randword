@@ -5,11 +5,16 @@ from .utilities import get_data
 
 
 def country(count: Optional[int] = None) -> Union[str, List[str]]:
-    '''Returns a random country or a list of a random countries
-    :param count: The number of countries to be generated, defaults to `None`
-    :type count: int, optional
-    :returns: A random country if `count` is `None` or a list of them if `count` is not `None`
-    :rtype: str, list
+    '''
+    Returns a random country or a list of a random countries
+
+    Args:
+        count (int, optional): The number of countries to be
+            generated. Defaults to `None`
+
+    Returns:
+        str: A random country if `count` is `None`
+        list of str: A list of countries if `count` is not `None`
     '''
     countries = get_data('places', 'countries')
 
@@ -20,11 +25,16 @@ def country(count: Optional[int] = None) -> Union[str, List[str]]:
 
 
 def city(count: Optional[int] = None) -> Union[str, List[str]]:
-    '''Returns a random city or a list of them
-    :param count: The number of cities to be generated, defaults to `None`
-    :type count: int, optional
-    :returns: A random city if `count` is `None` or a list of them if `count` is not `None`
-    :rtype: str, list
+    '''
+    Returns a random city or a list of them
+
+    Args:
+        count (int, optional): The number of cities to be
+            generated. Defaults to `None`
+
+    Returns:
+        str: A random city if `count` is `None`
+        list of str: A list of cities if `count` is not `None`
     '''
     cities = get_data('places', 'cities')
 
