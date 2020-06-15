@@ -29,7 +29,7 @@ See the [documentation](https://randword.readthedocs.io/en/latest/usage.html).
 - Magic 8-Ball answers were taken from [Wikipedia page](https://en.wikipedia.org/wiki/Magic_8-Ball).
 
 ## License
-[randword](https://github.com/8nhuman8/randword) specific code is distributed under [MIT License](https://github.com/8nhuman8/randword/blob/master/LICENSE).
+[randword](https://github.com/8nhuman8/randword) specific code is distributed under [MIT License](https://github.com/8nhuman8/randword/blob/master/LICENSE.txt).
 
 Copyright (c) 2020 Artyom Bezmenov
 
@@ -89,4 +89,4 @@ People *love* thorough bug reports. I'm not even kidding.
 If possible, stick to [PEP-8](https://www.python.org/dev/peps/pep-0008/), but don't bother too much :)
 
 ## License
-By contributing, you agree that your contributions will be licensed under its [MIT License](https://github.com/8nhuman8/randword/blob/master/LICENSE).
+By contributing, you agree that your contributions will be licensed under its [MIT License](https://github.com/8nhuman8/randword/blob/master/LICENSE.txt).
