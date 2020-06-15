@@ -17,6 +17,7 @@ def sequence(count: Optional[int] = None,
 
     Returns:
         str: The sequence if `count` is `None`
+    Returns:
         list of str: A list of sequences if `count` is not `None`
     '''
     chars = ascii_letters + digits
