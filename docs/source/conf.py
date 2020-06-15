@@ -2,7 +2,7 @@
 
 from sys import path
 from os.path import abspath
-path.insert(0, abspath('../../randword'))
+path.insert(0, abspath('../..'))
 
 
 # -- Project information -----------------------------------------------------
@@ -11,7 +11,7 @@ project = 'randword'
 copyright = '2020, Artyom Bezmenov'
 author = 'Artyom Bezmenov'
 
-release = '2.8.1'
+release = '2.8.2'
 
 
 # -- General configuration ---------------------------------------------------
