@@ -11,7 +11,7 @@ project = 'randword'
 copyright = '2020, Artyom Bezmenov'
 author = 'Artyom Bezmenov'
 
-release = '2.8'
+release = '2.8.1'
 
 
 # -- General configuration ---------------------------------------------------
