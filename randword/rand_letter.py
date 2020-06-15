@@ -16,8 +16,7 @@ def sequence(count: Optional[int] = None,
             Defaults to `8`
 
     Returns:
-        Union[str, List[str]]: The sequence if `count` is `None` or
-            a list of sequences if `count` is not `None`
+        Union[str, List[str]]: The sequence if `count` is `None` or a list of sequences if `count` is not `None`
     '''
     chars = ascii_letters + digits
 
@@ -39,8 +38,7 @@ def letter(count: Optional[int] = None) -> Union[str, List[str]]:
             generated. Defaults to `None`
 
     Returns:
-        Union[str, List[str]]: An ASCII letter if `count`
-            is `None` or a list of letters if `count` is not `None`
+        Union[str, List[str]]: An ASCII letter if `count` is `None` or a list of letters if `count` is not `None`
     '''
     if count:
         letters = []
@@ -60,8 +58,7 @@ def digit(count: Optional[int] = None) -> Union[str, List[str]]:
             generated. Defaults to `None`
 
     Returns:
-        Union[str, List[str]]: A single digit if `count` is
-            `None` or a list of digits if `count` is not `None`
+        Union[str, List[str]]: A single digit if `count` is `None` or a list of digits if `count` is not `None`
     '''
     if count:
         digits_lst = []

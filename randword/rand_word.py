@@ -40,8 +40,7 @@ def word(count: Optional[int] = None,
             contained in the word. Defaults to `None`
 
     Returns:
-        Union[str, List[str]]: A random English word if `count` is `None`
-            or a list of them if `count` is not `None`
+        Union[str, List[str]]: A random English word if `count` is `None` or a list of them if `count` is not `None`
 
     Raises:
         IndexError: If the word was not found or if the

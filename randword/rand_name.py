@@ -16,8 +16,7 @@ def name(count: Optional[int] = None,
             will be generated. Defaults to `None`
 
     Returns:
-        Union[str, List[str]]: A random first name if `count` is `None`
-            or a list of random first names if `count` is not `None`
+        Union[str, List[str]]: A random first name if `count` is `None` or a list of random first names if `count` is not `None`
     '''
     if gender == 'm':
         names = get_data('names', 'male_names')
@@ -43,8 +42,7 @@ def surname(count: Optional[int] = None) -> Union[str, List[str]]:
             generated. Defaults to `None`
 
     Returns:
-        Union[str, List[str]]: A random surname if `count` is `None`
-            or a list of surnames if `count` is not `None`
+        Union[str, List[str]]: A random surname if `count` is `None` or a list of surnames if `count` is not `None`
     '''
     surnames = get_data('names', 'surnames')
 
@@ -66,8 +64,7 @@ def fullname(count: Optional[int] = None,
             will be generated. Defaults to `None`
 
     Returns:
-        Union[str, List[str]]: A random fullname if `count` is `None`
-            or a list of random fullnames if `count` is not `None`
+        Union[str, List[str]]: A random fullname if `count` is `None` or a list of random fullnames if `count` is not `None`
     '''
     if gender == 'm':
         names = get_data('names', 'male_names')
