@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>randword Package &#8212; randword 2.6.5 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="License" href="license.html" />
+    <link rel="prev" title="Usage" href="usage.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="randword-package">
+<h1><cite>randword</cite> Package<a class="headerlink" href="#randword-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2><a class="reference internal" href="#module-randword" title="randword"><code class="xref py py-mod docutils literal notranslate"><span class="pre">randword</span></code></a> Package<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-randword"></span><p>A module that provides the generation of various information.</p>
+</div>
+<div class="section" id="module-randword.rand_word">
+<span id="rand-word-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">rand_word</span></code> Module<a class="headerlink" href="#module-randword.rand_word" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="randword.rand_word.word">
+<code class="sig-prename descclassname">randword.rand_word.</code><code class="sig-name descname">word</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">count</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">include_pos</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">exclude_pos</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">word_len</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">min_word_len</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">1</span></em>, <em class="sig-param"><span class="n">max_word_len</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">starts_with</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ends_with</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pattern</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>str<span class="p">, </span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/randword/rand_word.html#word"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#randword.rand_word.word" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a random English word or a list of words</p>
+<p>Abbreviation “pos” means “part of speech”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>count</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of words to
+be generated. Defaults to None.</p></li>
+<li><p><strong>include_pos</strong> (<em>list of str</em><em>, </em><em>optional</em>) – List of parts of speech that will be
+included in the generation. Defaults to <cite>None</cite></p></li>
+<li><p><strong>exclude_pos</strong> (<em>list of str</em><em>, </em><em>optional</em>) – List of parts of speech that will be
+excluded in the generation. Defaults to <cite>None</cite></p></li>
+<li><p><strong>word_len</strong> (<em>int</em><em>, </em><em>optional</em>) – Specifies the length of a word. Ignores the
+<cite>min_word_len</cite> and <cite>max_word_len</cite> parameters. Defaults to <cite>None</cite></p></li>
+<li><p><strong>min_word_len</strong> (<em>int</em><em>, </em><em>optional</em>) – The minimum word length. Defaults to <cite>1</cite></p></li>
+<li><p><strong>max_word_len</strong> (<em>int</em><em>, </em><em>optional</em>) – The maximum word length. Defaults to <cite>None</cite></p></li>
+<li><p><strong>starts_with</strong> (<em>str</em><em>, </em><em>optional</em>) – The pattern with which
+the word begins. Defaults to <cite>None</cite></p></li>
+<li><p><strong>ends_with</strong> (<em>str</em><em>, </em><em>optional</em>) – The pattern with which
+the word ends. Defaults to <cite>None</cite></p></li>
+<li><p><strong>pattern</strong> (<em>str</em><em>, </em><em>optional</em>) – The pattern that should be
+contained in the word. Defaults to <cite>None</cite></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A random English word if <cite>count</cite> is <cite>None</cite>
+list of str: A list of random English words if <cite>count</cite> is not <cite>None</cite></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>IndexError</strong> – If the word was not found or if the
+    desired number of words was not found</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-randword.rand_name">
+<span id="rand-name-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">rand_name</span></code> Module<a class="headerlink" href="#module-randword.rand_name" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="randword.rand_name.fullname">
+<code class="sig-prename descclassname">randword.rand_name.</code><code class="sig-name descname">fullname</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">count</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gender</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>str<span class="p">, </span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/randword/rand_name.html#fullname"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#randword.rand_name.fullname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a random fullname or a list of them</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>count</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of fullnames to be
+generated. Defaults to <cite>None</cite></p></li>
+<li><p><strong>gender</strong> (<em>str</em>) – Specifies the fullname of which gender
+will be generated. Defaults to <cite>None</cite></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>A random fullname if <cite>count</cite> is <cite>None</cite>
+list of str: A list of random fullnames</p>
+<blockquote>
+<div><p>if <cite>count</cite> is not <cite>None</cite></p>
+</div></blockquote>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="randword.rand_name.name">
+<code class="sig-prename descclassname">randword.rand_name.</code><code class="sig-name descname">name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">count</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gender</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>str<span class="p">, </span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/randword/rand_name.html#name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#randword.rand_name.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a random first name or a list of them</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>count</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of names to be
+generated. Defaults to <cite>None</cite></p></li>
+<li><p><strong>gender</strong> (<em>str</em><em>, </em><em>optional</em>) – Specifies the name of which gender
+will be generated. Defaults to <cite>None</cite></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>A random first name if <cite>count</cite> is <cite>None</cite>
+list of str: A list of random first names</p>
+<blockquote>
+<div><p>if <cite>count</cite> is not <cite>None</cite></p>
+</div></blockquote>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="randword.rand_name.surname">
+<code class="sig-prename descclassname">randword.rand_name.</code><code class="sig-name descname">surname</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">count</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>str<span class="p">, </span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/randword/rand_name.html#surname"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#randword.rand_name.surname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a random surname or a list of them</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>count</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of surnames to be
+generated. Defaults to <cite>None</cite></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A random surname if <cite>count</cite> is <cite>None</cite>
+list of str: A list of surnames if <cite>count</cite> is not <cite>None</cite></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-randword.rand_place">
+<span id="rand-place-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">rand_place</span></code> Module<a class="headerlink" href="#module-randword.rand_place" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="randword.rand_place.city">
+<code class="sig-prename descclassname">randword.rand_place.</code><code class="sig-name descname">city</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">count</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>str<span class="p">, </span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/randword/rand_place.html#city"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#randword.rand_place.city" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a random city or a list of them</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>count</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of cities to be
+generated. Defaults to <cite>None</cite></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A random city if <cite>count</cite> is <cite>None</cite>
+list of str: A list of cities if <cite>count</cite> is not <cite>None</cite></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="randword.rand_place.country">
+<code class="sig-prename descclassname">randword.rand_place.</code><code class="sig-name descname">country</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">count</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>str<span class="p">, </span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/randword/rand_place.html#country"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#randword.rand_place.country" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a random country or a list of a random countries</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>count</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of countries to be
+generated. Defaults to <cite>None</cite></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A random country if <cite>count</cite> is <cite>None</cite>
+list of str: A list of countries if <cite>count</cite> is not <cite>None</cite></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-randword.rand_letter">
+<span id="rand-letter-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">rand_letter</span></code> Module<a class="headerlink" href="#module-randword.rand_letter" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="randword.rand_letter.digit">
+<code class="sig-prename descclassname">randword.rand_letter.</code><code class="sig-name descname">digit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">count</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>str<span class="p">, </span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/randword/rand_letter.html#digit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#randword.rand_letter.digit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a random digit</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>count</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of digits to be
+generated. Defaults to <cite>None</cite></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A single digit if <cite>count</cite> is <cite>None</cite>
+list of str: A list of digits if <cite>count</cite> is not <cite>None</cite></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="randword.rand_letter.letter">
+<code class="sig-prename descclassname">randword.rand_letter.</code><code class="sig-name descname">letter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">count</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>str<span class="p">, </span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/randword/rand_letter.html#letter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#randword.rand_letter.letter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a random ASCII letter or a list of them</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>count</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of letters to be
+generated. Defaults to <cite>None</cite></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An ASCII letter if <cite>count</cite> is <cite>None</cite>
+list of str: A list of letters if <cite>count</cite> is not <cite>None</cite></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="randword.rand_letter.sequence">
+<code class="sig-prename descclassname">randword.rand_letter.</code><code class="sig-name descname">sequence</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">count</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">length</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">8</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>str<span class="p">, </span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/randword/rand_letter.html#sequence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#randword.rand_letter.sequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a random sequence consisting of ASCII symbols and digits
+or a list of a random sequences</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>count</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of sequances to be
+generated. Defaults to <cite>None</cite></p></li>
+<li><p><strong>length</strong> (<em>int</em><em>, </em><em>optional</em>) – The length of the sequence.
+Defaults to <cite>8</cite></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The sequence if <cite>count</cite> is <cite>None</cite>
+list of str: A list of sequences if <cite>count</cite> is not <cite>None</cite></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-randword.rand_other">
+<span id="rand-other-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">rand_other</span></code> Module<a class="headerlink" href="#module-randword.rand_other" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="randword.rand_other.flip_coin">
+<code class="sig-prename descclassname">randword.rand_other.</code><code class="sig-name descname">flip_coin</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/randword/rand_other.html#flip_coin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#randword.rand_other.flip_coin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="randword.rand_other.getrandbits">
+<code class="sig-prename descclassname">randword.rand_other.</code><code class="sig-name descname">getrandbits</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em><span class="sig-paren">)</span> &#x2192; x.  Generates an int with k random bits.<a class="headerlink" href="#randword.rand_other.getrandbits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="randword.rand_other.magic_8ball">
+<code class="sig-prename descclassname">randword.rand_other.</code><code class="sig-name descname">magic_8ball</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="reference internal" href="_modules/randword/rand_other.html#magic_8ball"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#randword.rand_other.magic_8ball" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">randword</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><cite>randword</cite> Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">randword</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-randword.rand_word"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rand_word</span></code> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-randword.rand_name"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rand_name</span></code> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-randword.rand_place"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rand_place</span></code> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-randword.rand_letter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rand_letter</span></code> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-randword.rand_other"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rand_other</span></code> Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="usage.html" title="previous chapter">Usage</a></li>
+      <li>Next: <a href="license.html" title="next chapter">License</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Artyom Bezmenov.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/randword.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

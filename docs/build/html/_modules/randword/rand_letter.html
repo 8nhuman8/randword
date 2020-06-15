@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>randword.rand_letter &#8212; randword 2.6.5 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for randword.rand_letter</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">ascii_letters</span><span class="p">,</span> <span class="n">digits</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choice</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Union</span>
+
+
+<div class="viewcode-block" id="sequence"><a class="viewcode-back" href="../../randword.html#randword.rand_letter.sequence">[docs]</a><span class="k">def</span> <span class="nf">sequence</span><span class="p">(</span><span class="n">count</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+             <span class="n">length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">8</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Returns a random sequence consisting of ASCII symbols and digits</span>
+<span class="sd">    or a list of a random sequences</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        count (int, optional): The number of sequances to be</span>
+<span class="sd">            generated. Defaults to `None`</span>
+<span class="sd">        length (int, optional): The length of the sequence.</span>
+<span class="sd">            Defaults to `8`</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The sequence if `count` is `None`</span>
+<span class="sd">        list of str: A list of sequences if `count` is not `None`</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">chars</span> <span class="o">=</span> <span class="n">ascii_letters</span> <span class="o">+</span> <span class="n">digits</span>
+
+    <span class="k">if</span> <span class="n">count</span><span class="p">:</span>
+        <span class="n">sequences</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+            <span class="n">sequences</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">choice</span><span class="p">(</span><span class="n">chars</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="n">sequences</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">choice</span><span class="p">(</span><span class="n">chars</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="letter"><a class="viewcode-back" href="../../randword.html#randword.rand_letter.letter">[docs]</a><span class="k">def</span> <span class="nf">letter</span><span class="p">(</span><span class="n">count</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Returns a random ASCII letter or a list of them</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        count (int, optional): The number of letters to be</span>
+<span class="sd">            generated. Defaults to `None`</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: An ASCII letter if `count` is `None`</span>
+<span class="sd">        list of str: A list of letters if `count` is not `None`</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">count</span><span class="p">:</span>
+        <span class="n">letters</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+            <span class="n">letters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">choice</span><span class="p">(</span><span class="n">ascii_letters</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">letters</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">choice</span><span class="p">(</span><span class="n">ascii_letters</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="digit"><a class="viewcode-back" href="../../randword.html#randword.rand_letter.digit">[docs]</a><span class="k">def</span> <span class="nf">digit</span><span class="p">(</span><span class="n">count</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Returns a random digit</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        count (int, optional): The number of digits to be</span>
+<span class="sd">            generated. Defaults to `None`</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: A single digit if `count` is `None`</span>
+<span class="sd">        list of str: A list of digits if `count` is not `None`</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">count</span><span class="p">:</span>
+        <span class="n">digits_lst</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+            <span class="n">digits_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">choice</span><span class="p">(</span><span class="n">digits</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">digits_lst</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">choice</span><span class="p">(</span><span class="n">digits</span><span class="p">)</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sequence</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">digit</span><span class="p">())</span>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">randword</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../randword.html"><cite>randword</cite> Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">License</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Artyom Bezmenov.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
