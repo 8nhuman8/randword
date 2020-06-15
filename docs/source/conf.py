@@ -10,9 +10,9 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-import os
-import sys
-sys.path.insert(0, os.path.abspath('./../..'))
+from sys import path
+from os.path import abspath
+path.insert(0, abspath('..'))
 
 
 # -- Project information -----------------------------------------------------
@@ -36,8 +36,9 @@ extensions = [
     'sphinx.ext.doctest',
     'sphinx.ext.viewcode',
     'sphinx.ext.coverage',
-    'sphinxcontrib.napoleon',
 ]
+
+master_doc = 'index'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -60,5 +61,3 @@ html_theme = 'alabaster'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-
-master_doc = 'index'
