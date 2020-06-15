@@ -17,18 +17,6 @@ def sequence(count: Optional[int] = None,
     Returns:
         str: The sequence (if `count` is None).
         list of str: A list of sequences (if `count` is not None).
-
-    Example:
-        >>> import randword as rw
-
-        >>> rw.sequence()
-        '8OOBn9XN'
-
-        >>> rw.sequence(5)
-        ['hcre1hlC', 'jXTIqVAU', '6BwH7sUM', '2nAvHVh8', '6OANP6dO']
-
-        >>> rw.sequence(5, 3)
-        ['Tdv', '8Q0', 'HKG', 'K7X', 'Rwi']
     '''
     chars = ascii_letters + digits
 
@@ -52,15 +40,6 @@ def letter(count: Optional[int] = None) -> Union[str, List[str]]:
     Returns:
         str: An ASCII letter (if `count` is None).
         list of str: A list of letters (if `count` is not None).
-
-    Example:
-        >>> import randword as rw
-
-        >>> rw.letter()
-        'Q'
-
-        >>> rw.letter(10)
-        ['D', 'M', 'N', 'j', 'h', 't', 'L', 'H', 'X', 'p']
     '''
     if count:
         letters = []
@@ -82,15 +61,6 @@ def digit(count: Optional[int] = None) -> Union[str, List[str]]:
     Returns:
         str: A single digigt (if `count` is None).
         list of str: A list of digits (if `count` is not None).
-
-    Example:
-        >>> import randword as rw
-
-        >>> rw.digit()
-        '8'
-
-        >>> rw.digit(10)
-        ['1', '3', '6', '7', '5', '9', '4', '8', '2', '0']
     '''
     if count:
         digits_lst = []

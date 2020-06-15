@@ -18,24 +18,6 @@ def name(count: Optional[int] = None,
     Returns:
         str: A random first name (if `count` is None).
         list of str: A list of random first names (if `count` is not None).
-
-    Examples:
-        >>> import randword as rw
-
-        >>> rw.name()
-        'Ethelred'
-
-        >>> rw.name(gender='m')
-        'Elden'
-
-        >>> rw.name(gender='f')
-        'Julee'
-
-        >>> rw.name(count=4)
-        ['Claudie', 'Trisha', 'Griffith', 'Annamarie']
-
-        >>> rw.name(4, 'm')
-        ['Helmuth', 'Collins', 'Ulrich', 'Zebedee']
     '''
     if gender == 'm':
         names = get_data('names', 'male_names')
@@ -64,15 +46,6 @@ def surname(count: Optional[int] = None) -> Union[str, List[str]]:
         str: A random surname (if `count` is None).
         list of str: A list of surnames
             (if `count` is not None).
-
-    Examples:
-        >>> import randword as rw
-
-        >>> rw.surname()
-        'Quicksall'
-
-        >>> rw.surname(4)
-        ['Shahan', 'Eickhoff', 'Akamiro', 'Giovanelli']
     '''
     surnames = get_data('names', 'surnames')
 
@@ -97,24 +70,6 @@ def fullname(count: Optional[int] = None,
         str: A random fullname (if `count` is None).
         list of str: A list of random fullnames
             (if `count` is not None).
-
-    Examples:
-        >>> import randword as rw
-
-        >>> rw.fullname()
-        'Charmane Bitzel'
-
-        >>> rw.fullname(gender='m')
-        'Nevin Mcnaught'
-
-        >>> rw.fullname(gender='f')
-        'Sophia Comans'
-
-        >>> rw.fullname(count=2)
-        ['Annetta Tiso', 'Babette Velazquez']
-
-        >>> rw.fullname(2, 'm')
-        ['Thaxter Vanhofwegen', 'Timmie Coray']
     '''
     if gender == 'm':
         names = get_data('names', 'male_names')

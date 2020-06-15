@@ -16,15 +16,6 @@ def country(count: Optional[int] = None) -> Union[str, List[str]]:
         str: A random country (if `count` is None).
         list of str: A list of countries
             (if `count` is not None).
-
-    Examples:
-        >>> import randword as rw
-
-        >>> rw.country()
-        'Romania'
-
-        >>> rw.country(4)
-        ['Lithuania', 'Ethiopia', 'Romania', 'Cyprus']
     '''
     countries = get_data('places', 'countries')
 
@@ -46,15 +37,6 @@ def city(count: Optional[int] = None) -> Union[str, List[str]]:
         str: A random city (if `count` is None).
         list of str: A list of cities
             (if `count` is not None).
-
-    Examples:
-        >>> import randword as rw
-
-        >>> rw.city()
-        'Charlotte'
-
-        >>> rw.city(4)
-        ['Scottsdale', 'Jefferson', 'Vero Beach', 'Gainesville']
     '''
     cities = get_data('places', 'cities')
 
