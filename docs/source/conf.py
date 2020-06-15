@@ -12,7 +12,7 @@
 #
 from sys import path
 from os.path import abspath
-path.insert(0, abspath('..'))
+path.insert(0, abspath('../..'))
 
 
 # -- Project information -----------------------------------------------------
@@ -22,7 +22,7 @@ copyright = '2020, Artyom Bezmenov'
 author = 'Artyom Bezmenov'
 
 # The full version, including alpha/beta/rc tags
-release = '2.6.4'
+release = '2.6.5'
 
 
 # -- General configuration ---------------------------------------------------

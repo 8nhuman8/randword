@@ -12,7 +12,6 @@ easy_install randword
 
 You can also just clone the repository and run:
 ```
-cd randword-package
 python setup.py install
 ```
 
