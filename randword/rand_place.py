@@ -13,8 +13,8 @@ def country(count: Optional[int] = None) -> Union[str, List[str]]:
             generated. Defaults to `None`
 
     Returns:
-        str: A random country if `count` is `None`
-        list of str: A list of countries if `count` is not `None`
+        Union[str, List[str]]: A random country if `count` is
+            `None` or a list of countries if `count` is not `None`
     '''
     countries = get_data('places', 'countries')
 
@@ -33,8 +33,8 @@ def city(count: Optional[int] = None) -> Union[str, List[str]]:
             generated. Defaults to `None`
 
     Returns:
-        str: A random city if `count` is `None`
-        list of str: A list of cities if `count` is not `None`
+        Union[str, List[str]]: A random city if `count` is `None`
+            or a list of cities if `count` is not `None`
     '''
     cities = get_data('places', 'cities')
 

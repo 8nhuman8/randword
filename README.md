@@ -16,7 +16,7 @@ python setup.py install
 ```
 
 ## Usage
-See the [documentation](https://randword.readthedocs.io/en/latest/index.html).
+See the [documentation](https://randword.readthedocs.io/en/stable/index.html).
 
 ## Credits and references
 - A database of words for each part of the speech was taken from [WordNet](https://wordnet.princeton.edu/).

@@ -12,7 +12,7 @@
 
 from sys import path
 from os.path import abspath
-path.insert(0, abspath('../..'))
+path.insert(0, abspath('../../randword/'))
 
 
 # -- Project information -----------------------------------------------------
@@ -22,7 +22,7 @@ copyright = '2020, Artyom Bezmenov'
 author = 'Artyom Bezmenov'
 
 # The full version, including alpha/beta/rc tags
-release = '2.6.6'
+release = '2.7'
 
 
 # -- General configuration ---------------------------------------------------
@@ -32,10 +32,7 @@ release = '2.6.6'
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx.ext.napoleon',
-    'sphinx.ext.doctest',
-    'sphinx.ext.viewcode',
-    'sphinx.ext.coverage'
+    'sphinx.ext.napoleon'
 ]
 
 # The master toctree document.

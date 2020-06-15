@@ -18,7 +18,7 @@ def word(count: Optional[int] = None,
          pattern: Optional[str] = None) -> Union[str, List[str]]:
     '''
     Returns a random English word or a list of words
-    
+
     Abbreviation "pos" means "part of speech"
 
     Args:
@@ -40,8 +40,8 @@ def word(count: Optional[int] = None,
             contained in the word. Defaults to `None`
 
     Returns:
-        str: A random English word if `count` is `None`
-        list of str: A list of random English words if `count` is not `None`
+        Union[str, List[str]]: A random English word if `count` is `None`
+            or a list of them if `count` is not `None`
 
     Raises:
         IndexError: If the word was not found or if the
