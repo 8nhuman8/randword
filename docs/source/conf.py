@@ -1,5 +1,5 @@
 # Configuration file for the Sphinx documentation builder.
-#
+
 # This file only contains a selection of the most common options. For a full
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
@@ -9,10 +9,10 @@
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-#
-from sys import path
-from os.path import abspath
-path.insert(0, abspath('../..'))
+
+#from sys import path
+#from os.path import abspath
+#path.insert(0, abspath('.'))
 
 
 # -- Project information -----------------------------------------------------
@@ -38,6 +38,7 @@ extensions = [
     'sphinx.ext.coverage',
 ]
 
+# The master toctree document.
 master_doc = 'index'
 
 # Add any paths that contain templates here, relative to this directory.
@@ -51,13 +52,11 @@ exclude_patterns = []
 
 # -- Options for HTML output -------------------------------------------------
 
-# The theme to use for HTML and HTML Help pages.  See the documentation for
+# The theme to use for HTML and HTML Help pages. See the documentation for
 # a list of builtin themes.
-#
 html_theme = 'alabaster'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-
