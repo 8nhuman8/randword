@@ -1,62 +1,56 @@
-randword package
-================
-
-Submodules
-----------
-
-randword.rand\_letter module
-----------------------------
-
-.. automodule:: randword.rand_letter
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-randword.rand\_name module
---------------------------
-
-.. automodule:: randword.rand_name
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-randword.rand\_other module
----------------------------
-
-.. automodule:: randword.rand_other
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-randword.rand\_place module
----------------------------
-
-.. automodule:: randword.rand_place
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-randword.rand\_word module
---------------------------
-
-.. automodule:: randword.rand_word
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-randword.utilities module
--------------------------
-
-.. automodule:: randword.utilities
-   :members:
-   :undoc-members:
-   :show-inheritance:
+`randword` Package
+==================
 
 
-Module contents
----------------
+:mod:`randword` Package
+-----------------------
 
 .. automodule:: randword
-   :members:
-   :undoc-members:
-   :show-inheritance:
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+:mod:`rand_word` Module
+-----------------------
+
+.. automodule:: randword.rand_word
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+:mod:`rand_name` Module
+-----------------------
+
+.. automodule:: randword.rand_name
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+:mod:`rand_place` Module
+------------------------
+
+.. automodule:: randword.rand_place
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+:mod:`rand_letter` Module
+-------------------------
+
+.. automodule:: randword.rand_letter
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+:mod:`rand_other` Module
+------------------------
+
+.. automodule:: randword.rand_other
+    :members:
+    :undoc-members:
+    :show-inheritance:
