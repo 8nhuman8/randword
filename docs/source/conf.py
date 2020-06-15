@@ -11,14 +11,17 @@ project = 'randword'
 copyright = '2020, Artyom Bezmenov'
 author = 'Artyom Bezmenov'
 
-release = '2.7.4'
+release = '2.7.5'
 
 
 # -- General configuration ---------------------------------------------------
 
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx.ext.napoleon'
+    'sphinx.ext.napoleon',
+    'sphinx.ext.doctest',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.coverage'
 ]
 
 master_doc = 'index'
