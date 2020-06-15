@@ -1,5 +1,5 @@
 from string import ascii_letters, digits
-from random import choice, sample
+from random import choice
 from typing import Optional, List, Union
 
 
@@ -63,7 +63,10 @@ def letter(count: Optional[int] = None) -> Union[str, List[str]]:
         ['D', 'M', 'N', 'j', 'h', 't', 'L', 'H', 'X', 'p']
     '''
     if count:
-        return sample(ascii_letters, count)
+        letters = []
+        for _ in range(count):
+            letters.append(choice(ascii_letters))
+        return letters
     else:
         return choice(ascii_letters)
 
@@ -90,7 +93,10 @@ def digit(count: Optional[int] = None) -> Union[str, List[str]]:
         ['1', '3', '6', '7', '5', '9', '4', '8', '2', '0']
     '''
     if count:
-        return sample(digits, count)
+        digits_lst = []
+        for _ in range(count):
+            digits_lst.append(choice(digits))
+        return digits_lst
     else:
         return choice(digits)
 
