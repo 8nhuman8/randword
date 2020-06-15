@@ -5,18 +5,13 @@ from typing import Optional, List, Union
 
 def sequence(count: Optional[int] = None,
              length: int = 8) -> Union[str, List[str]]:
-    '''
-    Returns a random sequence consisting of ASCII symbols and digits
-    or a list of a random sequences.
-
-    Args:
-        count (int, optional): The number of sequances to be
-            generated. Defaults to None.
-        length (int): The length of the sequence. Defaults to 8.
-
-    Returns:
-        str: The sequence (if `count` is None).
-        list of str: A list of sequences (if `count` is not None).
+    '''Returns a random sequence consisting of ASCII symbols and digits or a list of a random sequences
+    :param count: The number of sequences to be generated, defaults to `None`
+    :type count: int, optional
+    :param length: The length of the sequence, defaults to `8`
+    :type length: int, optional
+    :returns: A random sequence if `count` is `None` or a list of them if `count` is not `None`
+    :rtype: str, list
     '''
     chars = ascii_letters + digits
 
@@ -30,16 +25,11 @@ def sequence(count: Optional[int] = None,
 
 
 def letter(count: Optional[int] = None) -> Union[str, List[str]]:
-    '''
-    Returns a random ASCII letter or a list of them.
-
-    Args:
-        count (int, optional): The number of letters to be
-            generated. Defaults to None.
-
-    Returns:
-        str: An ASCII letter (if `count` is None).
-        list of str: A list of letters (if `count` is not None).
+    '''Returns a random ASCII letter or a list of them
+    :param count: The number of letters to be generated, defaults to `None`
+    :type count: int, optional
+    :returns: A random ASCII letter if `count` is `None` or a list of them if `count` is not `None`
+    :rtype: str, list
     '''
     if count:
         letters = []
@@ -53,14 +43,10 @@ def letter(count: Optional[int] = None) -> Union[str, List[str]]:
 def digit(count: Optional[int] = None) -> Union[str, List[str]]:
     '''
     Returns a random digit.
-
-    Args:
-        count (int, optional): The number of digits to be
-            generated. Defaults to None.
-
-    Returns:
-        str: A single digigt (if `count` is None).
-        list of str: A list of digits (if `count` is not None).
+    :param count: The number of digits to be generated, defaults to `None`
+    :type count: int, optional
+    :returns: A random digit if `count` is `None` or a list of them if `count` is not `None`
+    :rtype: str, list
     '''
     if count:
         digits_lst = []

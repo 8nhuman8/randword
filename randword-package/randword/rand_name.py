@@ -6,18 +6,13 @@ from .utilities import get_data
 
 def name(count: Optional[int] = None,
          gender: Optional[str] = None) -> Union[str, List[str]]:
-    '''
-    Returns a random first name or a list of them.
-
-    Args:
-        count (int, optional): The number of names to be
-            generated. Defaults to None.
-        gender (str): Specifies the name of which gender
-            will be generated. Defaults to None.
-
-    Returns:
-        str: A random first name (if `count` is None).
-        list of str: A list of random first names (if `count` is not None).
+    '''Returns a random first name or a list of them
+    :param count: The number of first names to be generated, defaults to `None`
+    :type count: int, optional
+    :param gender: Specifies the name of which gender will be generated, defaults to `None`
+    :type gender: str, optional
+    :returns: A random first name if `count` is `None` or a list of them if `count` is not `None`
+    :rtype: str, list
     '''
     if gender == 'm':
         names = get_data('names', 'male_names')
@@ -35,17 +30,11 @@ def name(count: Optional[int] = None,
 
 
 def surname(count: Optional[int] = None) -> Union[str, List[str]]:
-    '''
-    Returns a random surname (or last name) or a list of them.
-
-    Args:
-        count (int, optional): The number of surnames to be
-            generated. Defaults to None.
-
-    Returns:
-        str: A random surname (if `count` is None).
-        list of str: A list of surnames
-            (if `count` is not None).
+    '''Returns a random surname (or last name) or a list of them
+    :param count: The number of surnames to be generated, defaults to `None`
+    :type count: int, optional
+    :returns: A surname if `count` is `None` or a list of them if `count` is not `None`
+    :rtype: str, list
     '''
     surnames = get_data('names', 'surnames')
 
@@ -57,19 +46,13 @@ def surname(count: Optional[int] = None) -> Union[str, List[str]]:
 
 def fullname(count: Optional[int] = None,
              gender: Optional[str] = None) -> Union[str, List[str]]:
-    '''
-    Returns a random fullname or a list of them.
-
-    Args:
-        count (int, optional): The number of fullnames to be
-            generated. Defaults to None.
-        gender (str): Specifies the fullname of which gender
-            will be generated. Defaults to None.
-
-    Returns:
-        str: A random fullname (if `count` is None).
-        list of str: A list of random fullnames
-            (if `count` is not None).
+    '''Returns a random fullname or a list of them
+    :param count: The number of fullnames to be generated, defaults to `None`
+    :type count: int, optional
+    :param gender: Specifies the fullname of which gender will be generated, defaults to `None`
+    :type gender: str, optional
+    :returns: A random fullname if `count` is `None` or a list of them if `count` is not `None`
+    :rtype: str, list
     '''
     if gender == 'm':
         names = get_data('names', 'male_names')

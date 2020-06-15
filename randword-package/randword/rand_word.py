@@ -16,35 +16,28 @@ def word(count: Optional[int] = None,
          starts_with: Optional[str] = None,
          ends_with: Optional[str] = None,
          pattern: Optional[str] = None) -> Union[str, List[str]]:
-    '''
-    Returns a random English word or a list of words.
-    Abbreviation "pos" means "part of speech".
+    '''Returns a random English word or a list of words. Abbreviation "pos" means "part of speech"
+    :param count: The number of words to be generated, defaults to `None`
+    :type count: int, optional
+    :param include_pos: List of parts of speech that will be included in the generation, defaults to `None`
+    :type include_pos: list, optional
+    :param exclude_pos: List of parts of speech that will be excluded in the generation, defaults to `None`
+    :type exclude_pos: list, optional
+    :param word_len: Specifies the length of a word. Ignores the `min_word_len` and `max_word_len` parameters, defaults to `None`
+    :type word_len: int, optional
+    :param min_word_len: The minimum word length, defaults to `1`
+    :type min_word_len: int, optional
+    :param max_word_len: The maximum word length, defaults to `None`
+    :type max_word_len: int, optional
+    :param starts_with: The pattern with which the word begins, defaults to `None`
+    :type starts_with: str, optional
+    :param ends_with: The pattern with which the word ends, defaults to `None`
+    :type ends_with: str, optional
+    :param pattern: The pattern that should be contained in the word, defaults to `None`
+    :returns: A random English word if `count` is `None` or a list of them if `count` is not `None`
+    :rtype: str, list
 
-    Args:
-        count (int, optional): The number of words to
-            be generated. Defaults to None.
-        include_pos (list of str, optional): List of parts of speech that will be
-            included in the generation. Defaults to None.
-        exclude_pos (list of str, optional): List of parts of speech that will be
-            excluded in the generation. Defaults to None.
-        word_len (int, optional): Specifies the length of a word. Ignores the
-            `min_word_len` and `max_word_len` parameters. Defaults to None.
-        min_word_len (int): The minimum word length. Defaults to 1.
-        max_word_len (int, optional): The maximum word length. Defaults to None.
-        starts_with (str, optional): The pattern with which
-            the word begins. Defaults to None.
-        ends_with (str, optional): The pattern with which
-            the word ends. Defaults to None.
-        pattern (str, optional): The pattern that should be
-            contained in the word. Defaults to None.
-
-    Returns:
-        str: A random English word (if `count` is None).
-        list of str: A list of random English words (if `count` is not None).
-
-    Raises:
-        IndexError: If the word was not found or if the
-            desired number of words was not found.
+    :raises IndexError: If the word was not found or if the desired number of words was not found
     '''
     if not include_pos:
         include_pos = PARTS_OF_SPEECH

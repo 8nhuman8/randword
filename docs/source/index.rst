@@ -11,6 +11,7 @@ Welcome to randword's documentation!
    :caption: Contents:
 
    usage
+   randword
    license
 
 
