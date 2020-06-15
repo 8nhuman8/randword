@@ -1,5 +1,5 @@
-How to use
-==========
+Usage
+=====
 
 
 **Random words**::

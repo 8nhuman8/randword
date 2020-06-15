@@ -10,7 +10,7 @@ Welcome to randword's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   how_to_use
+   usage
    license
 
 
