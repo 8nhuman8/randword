@@ -1,9 +1,9 @@
 from setuptools import setup
 
 
-with open('README.md', 'r') as readme_file:
+with open('PACKAGE_README.md', 'r') as readme_file:
     long_description = readme_file.read()
-VERSION = '2.8.2'
+VERSION = '2.9'
 
 
 setup(
