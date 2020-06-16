@@ -3,7 +3,7 @@ from setuptools import setup
 
 with open('PACKAGE_README.md', 'r') as readme_file:
     long_description = readme_file.read()
-VERSION = '2.9.2'
+VERSION = '2.9.3'
 
 
 setup(
@@ -30,6 +30,7 @@ setup(
     project_urls={
         'Bug Tracker': 'https://github.com/8nhuman8/randword/issues',
         'Source Code': 'https://github.com/8nhuman8/randword',
+        'Documentation': 'https://randword.readthedocs.io/en/stable/',
         'Download': f'https://github.com/8nhuman8/randword/archive/{VERSION}.tar.gz',
         'Homepage': 'https://github.com/8nhuman8/randword'
     },
