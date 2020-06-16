@@ -1,6 +1,12 @@
 # randword
 ### A Python package for generation random English words
 
+## Table of contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits and references](#credits-and-references)
+- [License](#license)
+
 ## Installation
 You can install `randword` package using `pip` or `easy_install`:
 ```
