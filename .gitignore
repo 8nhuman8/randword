@@ -4,8 +4,8 @@ TODO.txt
 # VS Code workspace settings
 .vscode/
 
-# CMD commands
-cmd-commands/
+# Batch files
+batch/
 
 # "Python package" GitHub workflow
 .github/workflows/python-package.yml
