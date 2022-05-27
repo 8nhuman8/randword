@@ -1,21 +1,21 @@
 from random import choice, sample
-from typing import Optional, List, Union
 
 from .utilities import get_data
 
 
-PARTS_OF_SPEECH = ['adj', 'adv', 'conj', 'interj', 'noun', 'prep', 'pron', 'verb']
+PARTS_OF_SPEECH = ['adj', 'adv', 'conj', 'interj',
+                   'noun', 'prep', 'pron', 'verb']
 
 
-def word(count: Optional[int] = None,
-         include_pos: Optional[List[str]] = None,
-         exclude_pos: Optional[List[str]] = None,
-         word_len: Optional[int] = None,
+def word(count: int | None = None,
+         include_pos: list[str] | None = None,
+         exclude_pos: list[str] | None = None,
+         word_len: int | None = None,
          min_word_len: int = 1,
-         max_word_len: Optional[int] = None,
-         starts_with: Optional[str] = None,
-         ends_with: Optional[str] = None,
-         pattern: Optional[str] = None) -> Union[str, List[str]]:
+         max_word_len: int | None = None,
+         starts_with: str | None = None,
+         ends_with: str | None = None,
+         pattern: str | None = None) -> str | list[str]:
     '''
     Returns a random English word or a list of words
 
@@ -24,14 +24,15 @@ def word(count: Optional[int] = None,
     Args:
         count (int, optional): The number of words to
             be generated. Defaults to None.
-        include_pos (list of str, optional): List of parts of speech that will be
-            included in the generation. Defaults to `None`
-        exclude_pos (list of str, optional): List of parts of speech that will be
-            excluded in the generation. Defaults to `None`
+        include_pos (list of str, optional): List of parts of speech that will
+            be included in the generation. Defaults to `None`
+        exclude_pos (list of str, optional): List of parts of speech that will
+            be excluded in the generation. Defaults to `None`
         word_len (int, optional): Specifies the length of a word. Ignores the
             `min_word_len` and `max_word_len` parameters. Defaults to `None`
         min_word_len (int, optional): The minimum word length. Defaults to `1`
-        max_word_len (int, optional): The maximum word length. Defaults to `None`
+        max_word_len (int, optional): The maximum word length. Defaults
+            to `None`
         starts_with (str, optional): The pattern with which
             the word begins. Defaults to `None`
         ends_with (str, optional): The pattern with which
@@ -40,7 +41,8 @@ def word(count: Optional[int] = None,
             contained in the word. Defaults to `None`
 
     Returns:
-        Union[str, List[str]]: A random English word if `count` is `None` or a list of them if `count` is not `None`
+        str | list[str]: A random English word if `count` is `None` or
+            a list of them if `count` is not `None`
 
     Raises:
         IndexError: If the word was not found or if the
@@ -60,19 +62,25 @@ def word(count: Optional[int] = None,
         words.extend(pos_words)
 
     if max_word_len:
-        filtered_words = list(filter(lambda word: min_word_len <= len(word) <= max_word_len, words))
+        filtered_words = list(filter(lambda word:
+            min_word_len <= len(word) <= max_word_len, words))
     else:
-        filtered_words = list(filter(lambda word: min_word_len <= len(word), words))
+        filtered_words = list(filter(lambda word:
+            min_word_len <= len(word), words))
 
     if word_len:
-        filtered_words = list(filter(lambda word: word_len == len(word), words))
+        filtered_words = list(filter(lambda word:
+            word_len == len(word), words))
 
     if starts_with:
-        filtered_words = list(filter(lambda word: word.startswith(starts_with), filtered_words))
+        filtered_words = list(filter(lambda word:
+            word.startswith(starts_with), filtered_words))
     if ends_with:
-        filtered_words = list(filter(lambda word: word.endswith(ends_with), filtered_words))
+        filtered_words = list(filter(lambda word:
+            word.endswith(ends_with), filtered_words))
     if pattern:
-        filtered_words = list(filter(lambda word: pattern in word, filtered_words))
+        filtered_words = list(filter(lambda word:
+            pattern in word, filtered_words))
 
     if count:
         INDEX_ERROR_DESCRIPTION = 'The desired number of words was not found'

@@ -3,7 +3,7 @@ from setuptools import setup
 
 with open('PACKAGE_README.md', 'r') as readme_file:
     long_description = readme_file.read()
-VERSION = '2.9.4'
+VERSION = '2.9.5'
 
 
 setup(

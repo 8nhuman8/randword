@@ -1,10 +1,9 @@
 from random import choice, sample
-from typing import Optional, List, Union
 
 from .utilities import get_data
 
 
-def country(count: Optional[int] = None) -> Union[str, List[str]]:
+def country(count: int | None = None) -> str | list[str]:
     '''
     Returns a random country or a list of a random countries
 
@@ -13,7 +12,8 @@ def country(count: Optional[int] = None) -> Union[str, List[str]]:
             generated. Defaults to `None`
 
     Returns:
-        Union[str, List[str]]: A random country if `count` is `None` or a list of countries if `count` is not `None`
+        str | list[str]: A random country if `count` is `None` or
+            a list of countries if `count` is not `None`
     '''
     countries = get_data('places', 'countries')
 
@@ -23,7 +23,7 @@ def country(count: Optional[int] = None) -> Union[str, List[str]]:
         return choice(countries)
 
 
-def city(count: Optional[int] = None) -> Union[str, List[str]]:
+def city(count: int | None = None) -> str | list[str]:
     '''
     Returns a random city or a list of them
 
@@ -32,7 +32,8 @@ def city(count: Optional[int] = None) -> Union[str, List[str]]:
             generated. Defaults to `None`
 
     Returns:
-        Union[str, List[str]]: A random city if `count` is `None` or a list of cities if `count` is not `None`
+        str | list[str]: A random city if `count` is `None` or
+            a list of cities if `count` is not `None`
     '''
     cities = get_data('places', 'cities')
 

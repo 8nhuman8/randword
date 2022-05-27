@@ -1,4 +1,4 @@
-from random import choice, randrange, getrandbits, random
+from random import choice, getrandbits, randrange, random
 from time import sleep
 
 from .utilities import get_data

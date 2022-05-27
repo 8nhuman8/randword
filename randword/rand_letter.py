@@ -1,10 +1,8 @@
-from string import ascii_letters, digits
 from random import choice
-from typing import Optional, List, Union
+from string import ascii_letters, digits
 
 
-def sequence(count: Optional[int] = None,
-             length: int = 8) -> Union[str, List[str]]:
+def sequence(count: int | None = None, length: int = 8) -> str | list[str]:
     '''
     Returns a random sequence consisting of ASCII symbols and digits
     or a list of a random sequences
@@ -16,7 +14,8 @@ def sequence(count: Optional[int] = None,
             Defaults to `8`
 
     Returns:
-        Union[str, List[str]]: The sequence if `count` is `None` or a list of sequences if `count` is not `None`
+        str | list[str]: The sequence if `count` is `None` or
+            a list of sequences if `count` is not `None`
     '''
     chars = ascii_letters + digits
 
@@ -29,7 +28,7 @@ def sequence(count: Optional[int] = None,
         return ''.join(choice(chars) for _ in range(length))
 
 
-def letter(count: Optional[int] = None) -> Union[str, List[str]]:
+def letter(count: int | None = None) -> str | list[str]:
     '''
     Returns a random ASCII letter or a list of them
 
@@ -38,7 +37,8 @@ def letter(count: Optional[int] = None) -> Union[str, List[str]]:
             generated. Defaults to `None`
 
     Returns:
-        Union[str, List[str]]: An ASCII letter if `count` is `None` or a list of letters if `count` is not `None`
+        str | list[str]: An ASCII letter if `count` is `None` or
+            a list of letters if `count` is not `None`
     '''
     if count:
         letters = []
@@ -49,7 +49,7 @@ def letter(count: Optional[int] = None) -> Union[str, List[str]]:
         return choice(ascii_letters)
 
 
-def digit(count: Optional[int] = None) -> Union[str, List[str]]:
+def digit(count: int | None = None) -> str | list[str]:
     '''
     Returns a random digit
 
@@ -58,7 +58,8 @@ def digit(count: Optional[int] = None) -> Union[str, List[str]]:
             generated. Defaults to `None`
 
     Returns:
-        Union[str, List[str]]: A single digit if `count` is `None` or a list of digits if `count` is not `None`
+        str | list[str]: A single digit if `count` is `None` or
+            a list of digits if `count` is not `None`
     '''
     if count:
         digits_lst = []

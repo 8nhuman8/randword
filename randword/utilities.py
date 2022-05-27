@@ -1,9 +1,8 @@
-from pkg_resources import resource_filename
-from typing import List
 from pathlib import Path
+from pkg_resources import resource_filename
 
 
-def get_data(folder: str, filename: str) -> List[str]:
+def get_data(folder: str, filename: str) -> list[str]:
     words = []
     data_path = Path(resource_filename('randword', 'data'))
     filepath = data_path / folder / f'{filename}.txt'
