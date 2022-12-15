@@ -1,10 +1,11 @@
 from random import choice, sample
+from typing import Optional, List, Union
 
 from .utilities import get_data
 
 
-def name(count: int | None = None,
-         gender: str | None = None) -> str | list[str]:
+def name(count: Optional[int] = None,
+         gender: Optional[str] = None) -> Union[str, List[str]]:
     '''
     Returns a random first name or a list of them
 
@@ -15,8 +16,7 @@ def name(count: int | None = None,
             will be generated. Defaults to `None`
 
     Returns:
-        str | list[str]: A random first name if `count` is `None` or
-            a list of random first names if `count` is not `None`
+        Union[str, List[str]]: A random first name if `count` is `None` or a list of random first names if `count` is not `None`
     '''
     if gender == 'm':
         names = get_data('names', 'male_names')
@@ -33,7 +33,7 @@ def name(count: int | None = None,
         return choice(names)
 
 
-def surname(count: int | None = None) -> str | list[str]:
+def surname(count: Optional[int] = None) -> Union[str, List[str]]:
     '''
     Returns a random surname or a list of them
 
@@ -42,8 +42,7 @@ def surname(count: int | None = None) -> str | list[str]:
             generated. Defaults to `None`
 
     Returns:
-        str | list[str]: A random surname if `count` is `None` or
-            a list of surnames if `count` is not `None`
+        Union[str, List[str]]: A random surname if `count` is `None` or a list of surnames if `count` is not `None`
     '''
     surnames = get_data('names', 'surnames')
 
@@ -53,8 +52,8 @@ def surname(count: int | None = None) -> str | list[str]:
         return choice(surnames)
 
 
-def fullname(count: int | None = None,
-             gender: int | None = None) -> str | list[str]:
+def fullname(count: Optional[int] = None,
+             gender: Optional[str] = None) -> Union[str, List[str]]:
     '''
     Returns a random fullname or a list of them
 
@@ -65,8 +64,7 @@ def fullname(count: int | None = None,
             will be generated. Defaults to `None`
 
     Returns:
-        str | list[str]: A random fullname if `count` is `None` or
-            a list of random fullnames if `count` is not `None`
+        Union[str, List[str]]: A random fullname if `count` is `None` or a list of random fullnames if `count` is not `None`
     '''
     if gender == 'm':
         names = get_data('names', 'male_names')

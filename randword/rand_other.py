@@ -1,16 +1,10 @@
-from random import choice, getrandbits, randrange, random
+from random import choice, randrange, getrandbits, random
 from time import sleep
 
 from .utilities import get_data
 
 
 def magic_8ball() -> None:
-    '''
-    Creates a standard Magic 8 Ball game dialog
-
-    Returns:
-        None
-    '''
     answers = get_data('other', 'magic_8ball_answers')
 
     def main() -> None:
@@ -30,13 +24,6 @@ def magic_8ball() -> None:
 
 
 def flip_coin() -> int:
-    '''
-    Returns a random sequence consisting of ASCII symbols and digits
-    or a list of a random sequences
-
-    Returns:
-        int: 0 or 1 with equal probability (also -1 with chance of 1%)
-    '''
     if random() < 0.01:
         return -1
     else:
