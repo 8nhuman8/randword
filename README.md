@@ -1,6 +1,6 @@
 # randword
 
-`A Python package for generation random English words`
+The Python package for generating random English words
 
 ## Table of contents
 
@@ -13,17 +13,17 @@
 
 You can install `randword` package using `pip` or `easy_install`:
 
-```
+```bash
 pip install randword
 ```
 
-```
+```bash
 easy_install randword
 ```
 
 You can also just clone the repository and run:
 
-```
+```bash
 python setup.py install
 ```
 
@@ -45,4 +45,4 @@ See the [documentation](https://randword.readthedocs.io/en/stable/index.html).
 
 [randword](https://github.com/8nhuman8/randword) specific code is distributed under [MIT License](https://github.com/8nhuman8/randword/blob/master/LICENSE.txt).
 
-Copyright (c) 2020 Artyom Bezmenov
+Copyright (c) 2022 Artyom Bezmenov

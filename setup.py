@@ -1,14 +1,14 @@
 from setuptools import setup
 
 
-with open('PACKAGE_README.md', 'r') as readme_file:
+with open('README.md', 'r') as readme_file:
     long_description = readme_file.read()
-VERSION = '2.11'
+VERSION = '2.11.1'
 
 
 setup(
     name='randword',
-    description='A Python package for generation random English words',
+    description='The Python package for generating random English words',
     long_description=long_description,
     long_description_content_type='text/markdown',
     keywords=[

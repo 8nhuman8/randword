@@ -1,5 +1,5 @@
 '''
-A module that provides the generation of various information.
+The Python module for generating random English words.
 '''
 
 from .rand_word import PARTS_OF_SPEECH, word
