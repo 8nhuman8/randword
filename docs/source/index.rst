@@ -6,6 +6,7 @@ Welcome to randword's documentation!
    :caption: Contents:
 
    usage
+   cli
    randword
    license
 
