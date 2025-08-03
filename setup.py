@@ -27,6 +27,8 @@ setup(
     packages=['randword'],
     include_package_data=True,
 
+    entry_points={"console_scripts": ["randword = randword.cli:main"]},
+
     project_urls={
         'Bug Tracker': 'https://github.com/8nhuman8/randword/issues',
         'Source Code': 'https://github.com/8nhuman8/randword',
