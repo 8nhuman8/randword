@@ -6,7 +6,6 @@ from .utilities import get_data
 
 def magic_8ball() -> None:
     answers = get_data('other', 'magic_8ball_answers')
-
     def main() -> None:
         input('Ask me a question:\n  ')
 
