@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "randword"
+version = "2.11.3"
+description = "The Python package for generating random English words"
+readme = "README.md"
+requires-python = ">=3.7"
+license = "MIT"
+license-files = ["LICENSE.txt"]
+authors = [
+    { name = "Artyom Bezmenov (8nhuman)", email = "artem.bezmenov02@gmail.com" }
+]
+keywords = [
+    "python", "package", "python-package", "random",
+    "word", "words", "generator", "generation",
+    "random-word", "random-words", "random-word-generator",
+    "random-word-generation", "english",
+    "english-word", "english-words"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Development Status :: 5 - Production/Stable",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent"
+]
+dependencies = []
+
+[project.urls]
+"Bug Tracker" = "https://github.com/8nhuman8/randword/issues"
+"Source Code" = "https://github.com/8nhuman8/randword"
+"Documentation" = "https://randword.readthedocs.io/en/stable/"
+"Download" = "https://github.com/8nhuman8/randword/archive/2.11.3.tar.gz"
+"Homepage" = "https://github.com/8nhuman8/randword"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.package-data]
+"randword" = ["data/**/*"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+namespaces = false
+
+[project.scripts]
+randword = "randword.cli:main"
