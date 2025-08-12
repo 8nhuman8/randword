@@ -8,10 +8,10 @@ path.insert(0, abspath('../..'))
 # -- Project information -----------------------------------------------------
 
 project = 'randword'
-copyright = '2022, Artyom Bezmenov'
+copyright = '2025, Artyom Bezmenov'
 author = 'Artyom Bezmenov (8nhuman)'
 
-release = '2.11.1'
+release = '2.11.3'
 
 
 # -- General configuration ---------------------------------------------------

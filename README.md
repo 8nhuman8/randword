@@ -45,4 +45,4 @@ See the [documentation](https://randword.readthedocs.io/en/stable/index.html).
 
 [randword](https://github.com/8nhuman8/randword) specific code is distributed under [MIT License](https://github.com/8nhuman8/randword/blob/master/LICENSE.txt).
 
-Copyright (c) 2022 Artyom Bezmenov
+Copyright (c) 2025 Artyom Bezmenov
