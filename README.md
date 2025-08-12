@@ -11,20 +11,10 @@ The Python package for generating random English words
 
 ## Installation
 
-You can install `randword` package using `pip` or `easy_install`:
+You can install `randword` package using `pip`:
 
 ```bash
 pip install randword
-```
-
-```bash
-easy_install randword
-```
-
-You can also just clone the repository and run:
-
-```bash
-python setup.py install
 ```
 
 ## Usage
